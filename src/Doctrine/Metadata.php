@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Hgraca\DoctrineTestDbRegenerationBundle\Doctrine;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
-use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+use Doctrine\ORM\Mapping\ClassMetadata;
 use Hgraca\DoctrineTestDbRegenerationBundle\StdLib\Filesystem;
 use ReflectionClass;
 
