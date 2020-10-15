@@ -1,12 +1,12 @@
 {
-    "name": "catchr/doctrine-test-db-regeneration-bundle",
+    "name": "hgraca/doctrine-test-db-regeneration-bundle",
     "license": "MIT",
     "type": "library",
-    "description": "Symfony 5 to hgraca/doctrine-test-db-regeneration-bundle bundle. It is used to generate the test DB (if needed) for every test suite run or test method run.",
+    "description": "Symfony 2/3/4/5 bundle to generate the test DB (if needed) for every test suite run or test method run.",
     "authors": [
         {
-            "name": "PERRIN Maxence",
-            "email": "maxence.perrin@gmail.com"
+            "name": "Herberto Graça",
+            "email": "herberto.graca@gmail.com"
         }
     ],
     "autoload": {
