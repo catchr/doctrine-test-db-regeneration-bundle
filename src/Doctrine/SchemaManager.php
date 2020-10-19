@@ -6,7 +6,7 @@ namespace Hgraca\DoctrineTestDbRegenerationBundle\Doctrine;
 
 use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
 use Doctrine\Common\DataFixtures\ProxyReferenceRepository;
-use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+use Doctrine\Persistence\Mapping\ClassMetadata;
 use Doctrine\DBAL\Connection;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\SchemaTool;
@@ -150,8 +150,7 @@ final class SchemaManager implements SchemaManagerInterface
     }
 
     /**
-     * @throws \Doctrine\Common\DataFixtures\OutOfBoundsException
-     * @throws \Exception
+     * @return ProxyReferenceRepository
      */
     public function getLoadedReferenceRepository(): ProxyReferenceRepository
     {
@@ -187,10 +186,11 @@ final class SchemaManager implements SchemaManagerInterface
     }
 
     /**
-     * @throws ToolsException
+     * @param string $testDbBackupPath
+     * @param string $testDbPath
+     * @param string ...$migrationList
      * @throws ToolsException
      * @throws \ReflectionException
-     * @throws \Doctrine\DBAL\Migrations\MigrationException
      */
     private function createBackup(string $testDbBackupPath, string $testDbPath, string ...$migrationList): void
     {

@@ -6,7 +6,7 @@ namespace Hgraca\DoctrineTestDbRegenerationBundle\Doctrine;
 
 use Doctrine\Bundle\MigrationsBundle\Command\DoctrineCommand;
 use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Migrations\Configuration\Configuration;
+use Doctrine\Migrations\Configuration\Configuration;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 final class MigrationsExecutor implements MigrationsExecutorInterface
@@ -28,8 +28,7 @@ final class MigrationsExecutor implements MigrationsExecutorInterface
     }
 
     /**
-     * @throws \Doctrine\DBAL\Migrations\MigrationException
-     * @throws \Exception
+     * @param string ...$versionList
      */
     public function execute(string ...$versionList): void
     {
