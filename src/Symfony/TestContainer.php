@@ -87,11 +87,7 @@ final class TestContainer
         $kernelTestCase = new class() extends KernelTestCase {
             public function getKernel(): KernelInterface
             {
-                $kernel = $this->bootKernel();
-
-                self::$kernel = null;
-
-                return $kernel;
+                return $this->bootKernel();
             }
         };
 
