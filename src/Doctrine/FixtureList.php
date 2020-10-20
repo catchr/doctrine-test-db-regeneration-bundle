@@ -35,8 +35,12 @@ final class FixtureList
     public static function constructFromFixturesLoader(Loader $fixturesLoader): self
     {
         $fixtures = $fixturesLoader->getFixtures();
+        $platFixtures = [];
+        foreach($fixtures as $fixture) {
+            $platFixtures[] = $fixture;
+        }
 
-        return new self(Metadata::constructFromFixtures($fixtures), ...$fixtures);
+        return new self(Metadata::constructFromFixtures($fixtures), ...$platFixtures);
     }
 
     public function getFixtures(): array

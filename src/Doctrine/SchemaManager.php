@@ -86,6 +86,12 @@ final class SchemaManager implements SchemaManagerInterface
     }
 
     /**
+     * @param TestContainer|null $testContainer
+     * @param SchemaTool|null $schemaTool
+     * @param ORMExecutor|null $ORMExecutor
+     * @param ProxyReferenceRepository|null $referenceRepository
+     * @param MigrationsExecutorInterface|null $migrationsExecutor
+     * @return SchemaManagerInterface
      * @throws \ErrorException
      */
     public static function constructUsingTestContainer(
@@ -114,8 +120,10 @@ final class SchemaManager implements SchemaManagerInterface
     }
 
     /**
+     * @param bool $shouldReuseExistingDbBkp
+     * @param array $migrationsToExecute
      * @throws ToolsException
-     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function createTestDatabaseBackup(
         bool $shouldReuseExistingDbBkp = false,
